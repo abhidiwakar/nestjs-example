@@ -32,4 +32,4 @@ jobs:
         with:
           images: ${{ secrets.DOCKER_HUB_USERNAME }}/nestjs-example:latest
           tags: |
-            ${{ github.sha}}
+            type=sha
