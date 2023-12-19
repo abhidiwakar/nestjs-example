@@ -9,10 +9,10 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
 
       - name: Login to Dockerhub
-        uses: docker/login-action@v1
+        uses: docker/login-action@v3
         with:
           username: ${{ secrets.DOCKER_HUB_USERNAME }}
           password: ${{ secrets.DOCKER_HUB_TOKEN }}
@@ -28,7 +28,7 @@ jobs:
         run: docker push ${{ secrets.DOCKER_HUB_USERNAME }}/nestjs-example:latest
 
       - name: Update image metadata
-        uses: docker/metadata-action@v3
+        uses: docker/metadata-action@v5
         with:
           images: ${{ secrets.DOCKER_HUB_USERNAME }}/nestjs-example:latest
           tags: |
