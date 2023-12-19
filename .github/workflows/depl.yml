@@ -33,3 +33,9 @@ jobs:
           images: ${{ secrets.DOCKER_HUB_USERNAME }}/nestjs-example:latest
           tags: |
             type=sha
+          labels: |
+            org.opencontainers.image.title=NestJS Example
+            org.opencontainers.image.description=Example NestJS application
+            org.opencontainers.image.url=https://github.com/${{github.repository}}
+            org.opencontainers.image.revision=${{github.sha}}
+            org.opencontainers.image.licenses=MIT
